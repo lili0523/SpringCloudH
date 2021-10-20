@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.dao.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.cloud.model.BxxOrder">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <id column="userId" property="userId" jdbcType="INTEGER"></id>
+        <id column="orderNo" property="orderNo" jdbcType="VARCHAR"></id>
+        <id column="payStatus" property="payStatus" jdbcType="VARCHAR"></id>
+    </resultMap>
+    <select id="findOrderByIds"  parameterType="java.lang.Integer" resultType="com.cloud.model.BxxOrder">
+        select id,userId,orderNo,payStatus from bxxorder where id = #{id}
+    </select>
+
+
+
+</mapper>
